@@ -11,17 +11,20 @@
           . font-lock-keyword-face) )
   "Syntax highlighting for `opam-mode`")
 
-
-;; Syntax table (for comments)
-;; # until end of line
-;; ocaml-like comments (* may be (* nested *) *)
 (defvar opam-syntax-table
   (let ((st (make-syntax-table)))
+
+    ;; # Until end of line
     (modify-syntax-entry ?# "<" st)
     (modify-syntax-entry ?\n ">" st)
+
+    ;; (* OCaml-like comments, may be (* nested *) *)
     (modify-syntax-entry ?\( ". 1bn" st)
     (modify-syntax-entry ?* ". 23b" st)
     (modify-syntax-entry ?\) ". 4bn" st)
+
+    ;; Make keywords parsing easier allowing '-' in words
+    (modify-syntax-entry ?- "w" st)
     st )
   "Syntax table for `opam-mode'." )
 
