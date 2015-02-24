@@ -34,6 +34,6 @@
   (setq major-mode 'opam-mode)
   (setq mode-name "OPAM") )
 
-(add-to-list 'auto-mode-alist '("^opam$" . opam-mode))
+(add-to-list 'auto-mode-alist '("opam$" . opam-mode))
 
 (provide 'opam-mode)
