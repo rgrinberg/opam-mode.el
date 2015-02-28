@@ -53,8 +53,8 @@
   (setq major-mode 'opam-url-mode)
   (setq mode-name "OPAM") )
 
-(add-to-list 'auto-mode-alist '("opam$" . opam-mode))
-(add-to-list 'auto-mode-alist '("url$" . opam-url-mode))
+(add-to-list 'auto-mode-alist '("/opam\\'" . opam-mode))
+(add-to-list 'auto-mode-alist '("/url\\'" . opam-url-mode))
 
 (provide 'opam-url-mode)
 (provide 'opam-mode)
