@@ -9,7 +9,14 @@
 (defvar opam-keywords
   (list '("\\<\\(a\\(?:uthors\\|vailable\\)\\|bu\\(?:g-reports\\|ild\\(?:-\\(?:doc\\|test\\)\\)?\\)\\|conflicts\\|d\\(?:e\\(?:p\\(?:\\(?:e\\(?:nd\\|xt\\)\\|opt\\)s\\)\\|v-repo\\)\\|oc\\)\\|homepage\\|install\\|li\\(?:braries\\|cense\\)\\|m\\(?:aintainer\\|essages\\)\\|name\\|o\\(?:caml-version\\|pam-version\\|s\\)\\|p\\(?:\\(?:atch\\|ost-messag\\)es\\)\\|remove\\|s\\(?:ubst\\|yntax\\)\\|tags\\|version\\)\\>"
           . font-lock-keyword-face) )
-  "Syntax highlighting for `opam-mode`")
+  "Keywords for `opam-mode'")
+
+;; Keyword list for url file
+;; "src" "archive" "http" "local" "git" "darcs" "hg" "mirrors" "checksum"
+(defvar opam-url-keywords
+  (list '("\\<\\(archive\\|checksum\\|darcs\\|git\\|h\\(?:g\\|ttp\\)\\|local\\|mirrors\\|src\\)\\>"
+          . font-lock-keyword-face) )
+  "Keywords for `opam-url-mode'")
 
 (defvar opam-syntax-table
   (let ((st (make-syntax-table)))
@@ -37,6 +44,17 @@
   (setq major-mode 'opam-mode)
   (setq mode-name "OPAM") )
 
-(add-to-list 'auto-mode-alist '("opam$" . opam-mode))
+(defun opam-url-mode ()
+  "Major mode for editing opam url files"
+  (interactive)
+  (kill-all-local-variables)
+  (set-syntax-table opam-syntax-table)
+  (setq font-lock-defaults '(opam-url-keywords))
+  (setq major-mode 'opam-url-mode)
+  (setq mode-name "OPAM") )
 
+(add-to-list 'auto-mode-alist '("opam$" . opam-mode))
+(add-to-list 'auto-mode-alist '("url$" . opam-url-mode))
+
+(provide 'opam-url-mode)
 (provide 'opam-mode)
