@@ -1,5 +1,42 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;    The MIT License (MIT)    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Keyword list for opam file
+;; Copyright (c) 2015 Julien Sagot <ju.sagot@gmail.com>
+
+;; Permission is hereby granted, free of charge, to any person
+;; obtaining a copy of this software and associated documentation
+;; files (the "Software"), to deal in the Software without restriction,
+;; including without limitation the rights to use, copy, modify, merge,
+;; publish, distribute, sublicense, and/or sell copies of the Software,
+;; and to permit persons to whom the Software is furnished to do so,
+;; subject to the following conditions:
+
+;; The above copyright notice and this permission notice shall be
+;; included in all copies or substantial portions of the Software.
+
+;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+;; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+;; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+;; IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+;; CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+;; TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+;; SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;    Description    ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Comments and keywords (field labels) highlighting for opam files.
+
+;; Sources and issue tracker: https://github.com/sagotch/opam-mode.el
+
+;; Version: 0.1
+
+;;;;;;;;;;;;;;;;;;;;;
+;;    opam-mode    ;;
+;;;;;;;;;;;;;;;;;;;;;
+
 ;; "authors" "available" "bug-reports" "build" "build-doc"
 ;; "build-test" "conflicts" "depends" "depexts" "depopts"
 ;; "dev-repo" "doc" "homepage" "install" "libraries" "license"
@@ -11,7 +48,6 @@
           . font-lock-keyword-face) )
   "Keywords for `opam-mode'")
 
-;; Keyword list for url file
 ;; "src" "archive" "http" "local" "git" "darcs" "hg" "mirrors" "checksum"
 (defvar opam-url-keywords
   (list '("\\<\\(archive\\|checksum\\|darcs\\|git\\|h\\(?:g\\|ttp\\)\\|local\\|mirrors\\|src\\)\\>"
