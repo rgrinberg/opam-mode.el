@@ -37,21 +37,31 @@
 ;;    opam-mode    ;;
 ;;;;;;;;;;;;;;;;;;;;;
 
-;; "authors" "available" "bug-reports" "build" "build-doc"
-;; "build-test" "conflicts" "depends" "depexts" "depopts"
-;; "dev-repo" "doc" "homepage" "install" "libraries" "license"
-;; "maintainer" "messages" "name" "ocaml-version" "opam-version"
-;; "os" "patches" "post-messages" "remove" "version" "subst"
-;; "syntax" "tags"
-(defvar opam-keywords
-  (list '("\\<\\(a\\(?:uthors\\|vailable\\)\\|bu\\(?:g-reports\\|ild\\(?:-\\(?:doc\\|test\\)\\)?\\)\\|conflicts\\|d\\(?:e\\(?:p\\(?:\\(?:e\\(?:nd\\|xt\\)\\|opt\\)s\\)\\|v-repo\\)\\|oc\\)\\|homepage\\|install\\|li\\(?:braries\\|cense\\)\\|m\\(?:aintainer\\|essages\\)\\|name\\|o\\(?:caml-version\\|pam-version\\|s\\)\\|p\\(?:\\(?:atch\\|ost-messag\\)es\\)\\|remove\\|s\\(?:ubst\\|yntax\\)\\|tags\\|version\\)\\>"
-          . font-lock-keyword-face) )
+(defun mk-regexp (kws)
+  "Build a regexp from a keyword list."
+  (concat "\\<" (regexp-opt kws t) "\\>" ) )
+
+(defconst opam-keywords
+  (list (cons (mk-regexp
+               '("authors" "available" "bug-reports"
+                 "build" "build-doc" "build-test" "conflicts"
+                 "depends" "depexts" "depopts"
+                 "dev-repo" "doc" "homepage" "install"
+                 "libraries" "license"
+                 "maintainer" "messages" "name"
+                 "ocaml-version" "opam-version"
+                 "os" "patches" "post-messages"
+                 "remove" "subst"
+                 "syntax" "tags" "version" ) )
+              font-lock-keyword-face) )
   "Keywords for `opam-mode'")
 
 ;; "src" "archive" "http" "local" "git" "darcs" "hg" "mirrors" "checksum"
-(defvar opam-url-keywords
-  (list '("\\<\\(archive\\|checksum\\|darcs\\|git\\|h\\(?:g\\|ttp\\)\\|local\\|mirrors\\|src\\)\\>"
-          . font-lock-keyword-face) )
+(defconst opam-url-keywords
+  (list (cons (mk-regexp
+               '("src" "archive" "http" "local" "git"
+                 "darcs" "hg" "mirrors" "checksum") )
+              font-lock-keyword-face) )
   "Keywords for `opam-url-mode'")
 
 (defvar opam-syntax-table
@@ -69,7 +79,7 @@
     ;; Make keywords parsing easier allowing '-' in words
     (modify-syntax-entry ?- "w" st)
     st )
-  "Syntax table for `opam-mode'." )
+  "Syntax table for `opam-mode' and `opam-url-mode'." )
 
 (defun opam-mode ()
   "Major mode for editing opam files"
