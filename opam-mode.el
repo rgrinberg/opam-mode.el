@@ -81,6 +81,7 @@
     st )
   "Syntax table for `opam-mode' and `opam-url-mode'." )
 
+;;;###autoload
 (defun opam-mode ()
   "Major mode for editing opam files"
   (interactive)
@@ -90,6 +91,7 @@
   (setq major-mode 'opam-mode)
   (setq mode-name "OPAM") )
 
+;;;###autoload
 (defun opam-url-mode ()
   "Major mode for editing opam url files"
   (interactive)
@@ -99,7 +101,10 @@
   (setq major-mode 'opam-url-mode)
   (setq mode-name "OPAM") )
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("/opam\\'" . opam-mode))
+
+;;;###autoload
 (add-to-list 'auto-mode-alist '("/url\\'" . opam-url-mode))
 
 (provide 'opam-url-mode)
