@@ -107,5 +107,4 @@
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("/url\\'" . opam-url-mode))
 
-(provide 'opam-url-mode)
 (provide 'opam-mode)
