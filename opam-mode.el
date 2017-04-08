@@ -1,3 +1,12 @@
+;;; opam-mode.el --- mode for opam files
+
+;; Author: Julien Sagot <ju.sagot@gmail.com>
+;; Version: 0.1
+;; Keywords: opam, ocaml
+;; URL: https://github.com/sagotch/opam-mode.el
+;;
+;; This file is not part of GNU Emacs.
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;    The MIT License (MIT)    ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -23,6 +32,8 @@
 ;; TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 ;; SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+;;; Commentary:
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;    Description    ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -31,7 +42,7 @@
 
 ;; Sources and issue tracker: https://github.com/sagotch/opam-mode.el
 
-;; Version: 0.1
+;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;    opam-mode    ;;
@@ -108,3 +119,5 @@
 (add-to-list 'auto-mode-alist '("/url\\'" . opam-url-mode))
 
 (provide 'opam-mode)
+
+;;; opam-mode.el ends here
