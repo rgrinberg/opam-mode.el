@@ -113,7 +113,7 @@
   (setq mode-name "OPAM") )
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("/opam\\'" . opam-mode))
+(add-to-list 'auto-mode-alist '("\\(?:\\.\\|/\\)opam\\'" . opam-mode))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("/url\\'" . opam-url-mode))
