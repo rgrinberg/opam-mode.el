@@ -3,7 +3,7 @@
 ;; Author: Julien Sagot <ju.sagot@gmail.com>
 ;; Version: 0.1
 ;; Keywords: opam, ocaml
-;; URL: https://github.com/sagotch/opam-mode.el
+;; Homepage: https://github.com/sagotch/opam-mode.el
 ;;
 ;; This file is not part of GNU Emacs.
 
